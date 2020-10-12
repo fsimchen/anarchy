@@ -6,30 +6,17 @@ source ./functions.sh
 echo "Setting sudo no password rights . . ."
 sudo sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
 
-echo "Atualiza banco e instala reflector . . ."
-sudo pacman -Syy reflector --noconfirm --needed
-
-echo "Setting pacman mirrorlist . . ."
-sudo reflector -c "United States" -f 50 --sort rate --save /etc/pacman.d/mirrorlist
-
 echo "Atualiza sistema . . ."
-sudo pacman -Syyu
-
-echo -e "KEYMAP=${KEYMAP}\nFONT=ter-v32b\n" | sudo tee /etc/vconsole.conf
-
-echo "Setting Hostname . . ."
-sudo hostnamectl --no-ask-password set-hostname $HOSTNAME
-echo -e "127.0.0.1 localhost\n::1 localhost\n127.0.0.1 ${HOSTNAME}.localdomain ${HOSTNAME}\n" | sudo tee /etc/hosts
-
-echo "Installing YAY ..."
-cd "${HOME}"
-git clone "https://aur.archlinux.org/yay.git"
-cd ${HOME}/yay
-makepkg -si --noconfirm
+sudo pacman -Syyu --noconfirm
 
 echo "Setting AUR repository mirrorlist . . ."
 yay -S --noconfirm chaotic-mirrorlist
 yay -S --noconfirm chaotic-keyring
+
+echo '' | sudo tee -a /etc/pacman.conf
+echo '[arcolinux_repo_3party]' | sudo tee -a /etc/pacman.conf
+echo 'SigLevel = Never' | sudo tee -a /etc/pacman.conf
+echo 'Server = https://arcolinux.github.io/arcolinux_repo_3party/$arch' | sudo tee -a /etc/pacman.conf
 echo '' | sudo tee -a /etc/pacman.conf
 echo '[chaotic-aur]' | sudo tee -a /etc/pacman.conf
 echo 'SigLevel = Never' | sudo tee -a /etc/pacman.conf
@@ -42,7 +29,7 @@ echo '' | sudo tee -a /etc/pacman.conf
 echo '[sublime-text]' | sudo tee -a /etc/pacman.conf
 echo 'Server = https://download.sublimetext.com/arch/stable/x86_64' | sudo tee -a /etc/pacman.conf
 echo '' | sudo tee -a /etc/pacman.conf
-sudo pacman -Syy
+sudo pacman -Syyu --noconfirm
 
 echo "Dependency fix to install ttf-google-fonts-git . . ."
 sudo pacman -Rdd adobe-source-code-pro-fonts --noconfirm
@@ -50,11 +37,6 @@ sudo pacman -Rdd adobe-source-code-pro-fonts --noconfirm
 echo "Verifica quais pacotes instalar . . ."
 UNIQUEPKGS=($(echo "${PKGS[@]}" | tr ' ' '\n' | sort -u | tr '\n' ' '));
 _installMany "${UNIQUEPKGS[@]}";
-
-echo "Disabling buggy cursor inheritance . . ."
-# When you boot with multiple monitors the cursor can look huge. This fixes it.
-echo '[Icon Theme]' | sudo tee /usr/share/icons/default/index.theme
-echo '#Inherits=Theme' | sudo tee -a /usr/share/icons/default/index.theme
 
 echo "Increasing file watcher count . . ."
 # This prevents a "too many files" error in Visual Studio Code
@@ -69,14 +51,14 @@ echo "Setting bluetooth ..."
 sudo sed -i 's|#AutoEnable=false|AutoEnable=true|g' /etc/bluetooth/main.conf
 
 echo "Enabling systemctl daemons ..."
-sudo systemctl enable lightdm.service
+#sudo systemctl enable lightdm.service
 sudo systemctl enable --now bluetooth.service
 sudo systemctl enable --now org.cups.cupsd.service
 sudo systemctl enable --now ntpd.service
-sudo systemctl enable --now NetworkManager.service
+#sudo systemctl enable --now NetworkManager.service
 
-echo "Setting keymap on Xorg ..."
-sudo localectl set-x11-keymap $X11KEYMAP
+#echo "Setting keymap on Xorg ..."
+#sudo localectl set-x11-keymap $X11KEYMAP
 
 #echo "Setting the amdgpu driver on grub..."
 #sudo sed -i 's|GRUB_CMDLINE_LINUX_DEFAULT="|GRUB_CMDLINE_LINUX_DEFAULT="radeon.cik_support=0 amdgpu.cik_support=1 radeon.si_support=0 amdgpu.si_support=1 |g' /etc/default/grub
