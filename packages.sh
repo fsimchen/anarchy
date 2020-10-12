@@ -23,48 +23,48 @@ PKGS=(
     'xdg-user-dirs'
     # --- XORG Display Rendering
     'xorg'                  # Base Package
-    'xorg-drivers'          # Display Drivers
+    'xorg-drivers'          # Display Drivers 
     'xterm'                 # Terminal for TTY
     'xorg-server'           # XOrg server
     'xorg-apps'             # XOrg apps group
     'xorg-xinit'            # XOrg init
     'xorg-xinput'           # Xorg xinput
     'mesa'                  # Open source version of OpenGL
-    
+
     # --- Setup Desktop
     'awesome'               # Awesome Desktop
-    'xfce4-power-manager'   # Power Manager
+    'xfce4-power-manager'   # Power Manager 
     'rofi'                  # Menu System
     'picom'                 # Translucent Windows
     'xclip'                 # System Clipboard
     'polkit-gnome'          # Elevate Applications
     'gnome-keyring'         # Elevate Applications
     'lxappearance'          # Set System Themes
-    
+
     # --- Login Display Manager
     'lightdm'                   # Base Login Manager
     'lightdm-gtk-greeter'
     'lightdm-gtk-greeter-settings'
-    
+
     # --- Networking Setup
     'wpa_supplicant'            # Key negotiation for WPA wireless networks
     'openvpn'                   # Open VPN support
     'networkmanager-openvpn'    # Open VPN plugin for NM
     'libsecret'                 # Library for storing passwords
-    
+
     # --- Audio
     'alsa-utils'        # Advanced Linux Sound Architecture (ALSA) Components https://alsa.opensrc.org/
     'alsa-plugins'      # ALSA plugins
     'pulseaudio'        # Pulse Audio sound components
     'pulseaudio-alsa'   # ALSA configuration for pulse audio
     'pavucontrol'       # Pulse Audio volume control
-    
+
     # --- Bluetooth
     'bluez'                 # Daemons for the bluetooth protocol stack
     'bluez-utils'           # Bluetooth development and debugging utilities
     'blueberry'             # Bluetooth configuration tool
     'pulseaudio-bluetooth'  # Bluetooth support for PulseAudio
-    
+
     # --- Printers
     'cups'                  # Open source printer drivers
     'cups-pdf'              # PDF support for cups
@@ -72,7 +72,7 @@ PKGS=(
     'gsfonts'               # Adobe Postscript replacement fonts
     'hplip'                 # HP Drivers
     'system-config-printer' # Printer setup  utility
-    
+
     # CUSTOM --------------------------------------------------------------
     'gtk-engine-murrine'
     'gtk-engines'
@@ -89,7 +89,7 @@ PKGS=(
     'virtualbox-host-modules-arch'
     'qt5-x11extras'
     'qt5ct'
-    
+
     # TERMINAL UTILITIES --------------------------------------------------
     'bash-completion'       # Tab completion for Bash
     'bleachbit'             # File deletion utility
@@ -116,7 +116,7 @@ PKGS=(
     'zip'                   # Zip compression program
     'zsh'                   # ZSH shell
     'zsh-completions'       # Tab completion for ZSH
-    
+
     # DISK UTILITIES ------------------------------------------------------
     'android-tools'         # ADB for Android
     'android-file-transfer' # Android File Transfer
@@ -132,9 +132,9 @@ PKGS=(
     'ntfs-3g'               # Open source implementation of NTFS file system
     'samba'                 # Samba File Sharing
     'smartmontools'         # Disk Monitoring
-    'smbclient'             # SMB Connection
+    'smbclient'             # SMB Connection 
     'xfsprogs'              # XFS Support
-    
+
     # GENERAL UTILITIES ---------------------------------------------------
     'flameshot'             # Screenshots
     'freerdp'               # RDP Connections
@@ -144,7 +144,7 @@ PKGS=(
     'variety'               # Wallpaper changer
     'ttf-fira-code'
     'qbittorrent'
-    
+
     # DEVELOPMENT ---------------------------------------------------------
     'gedit'                 # Text editor
     'meld'                  # File/directory comparison
@@ -152,21 +152,21 @@ PKGS=(
     'npm'                   # Node package manager
     'python'                # Scripting language
     'yarn'                  # Dependency management (Hyper needs this)
-    
+
     # MEDIA ---------------------------------------------------------------
     'celluloid'             # Video player
     'vlc'                   # Video player
-    
+
     # GRAPHICS AND DESIGN -------------------------------------------------
     'gcolor2'               # Colorpicker
-    'gimp'
+    'gimp'                 
     'ristretto'             # Multi image viewer
-    
+
     # PRODUCTIVITY --------------------------------------------------------
     'hunspell'              # Spellcheck libraries
     'hunspell-en_US'           # English spellcheck library
     'xpdf'                  # PDF viewer
-    
+
     # UTILITIES -----------------------------------------------------------
     'i3lock-fancy-git'              # Screen locker
     'corectrl'
@@ -179,20 +179,20 @@ PKGS=(
     'etcher-bin'
     'bluez-firmware'        # Firmwares for Broadcom BCM203x and STLC2300 Bluetooth chips
     'hunspell-pt-br'           # English spellcheck library
-    
+
     # MEDIA ---------------------------------------------------------------
     'screenkey'                 # Screencast your keypresses
     'lbry-app-bin'              # LBRY Linux Application
-    
+
     # COMMUNICATIONS ------------------------------------------------------
     'firefox'
-    
+
     # THEMES --------------------------------------------------------------
     #'materia-gtk-theme'             # Desktop Theme
     'papirus-icon-theme'            # Desktop Icons
     'capitaine-cursors'             # Cursor Themes
     'qt5-styleplugins'
-    
+
     # CUSTOM --------------------------------------------------------------
     'arandr'
     'redshift'
@@ -207,7 +207,7 @@ PKGS=(
     'ttf-wps-fonts'
     'ttf-ms-fonts'
     'lutris'
-    
+
     'wine-staging'
     'winetricks'
     'giflib'
