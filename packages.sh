@@ -89,7 +89,6 @@ PKGS=(
     'virtualbox-host-modules-arch'
     'qt5-x11extras'
     'qt5ct'
-    'snapper'
 
     # TERMINAL UTILITIES --------------------------------------------------
     'bash-completion'       # Tab completion for Bash
