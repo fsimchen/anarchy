@@ -79,13 +79,11 @@ PKGS=(
     'ttf-roboto'
     'noto-fonts-emoji'
     'qbittorrent'
-    'gnome-shell'
     'sassc'
     'dbeaver'
     'exa'
     'docker'
     'docker-compose'
-    'gnome-themes-extra'
     # SYSTEM --------------------------------------------------------------
     'virtualbox'
     'virtualbox-host-modules-arch'
