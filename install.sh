@@ -101,9 +101,9 @@ echo -e "XDG_CURRENT_DESKTOP=Unity\nQT_QPA_PLATFORMTHEME=gtk2" | sudo tee -a /et
 git clone --depth 1 https://github.com/afraidofmusic/materia-theme-dracula.git
 cd materia-theme-dracula
 sudo ./install.sh
-cp /opt/arch/configs/.gtkrc-2.0 $HOME/.gtkrc-2.0
+cp ./configs/.gtkrc-2.0 $HOME/.gtkrc-2.0
 mkdir $HOME/.config/gtk-3.0
-cp /opt/arch/configs/.gtk-3.0_settings.ini $HOME/.config/gtk-3.0/settings.ini
+cp ./configs/.gtk-3.0_settings.ini $HOME/.config/gtk-3.0/settings.ini
 gsettings set org.gnome.desktop.interface gtk-theme Materia-dark
 
 echo "Remove no password sudo rights . . ."
