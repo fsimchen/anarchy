@@ -11,6 +11,6 @@ else
     echo "Installing AUR packages: $(printf "%s " "${toInstallAUR[@]}")"
     for AURPKG in "${toInstallAUR[@]}"; do
         echo "Installing AUR package: $AURPKG"
-        yay -S --noconfirm $AURPKG
+        yay -S $AURPKG
     done
 fi

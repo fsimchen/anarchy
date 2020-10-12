@@ -9,5 +9,5 @@ if [[ "${toInstall[@]}" == "" ]] ; then
     echo "All packages are already installed.";
 else
     echo "Installing packages: $(printf "%s " "${toInstall[@]}")"
-    sudo pacman -S $(printf "%s " "${toInstall[@]}") --noconfirm --needed
+    sudo pacman -S $(printf "%s " "${toInstall[@]}")
 fi
