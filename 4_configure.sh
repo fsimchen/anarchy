@@ -35,28 +35,28 @@ sudo modprobe vboxdrv
 sudo gpasswd -a $USER vboxusers
 
 # VirtualBox theme fix
-sudo sed -i 's|Exec=VirtualBox %U|Exec=VirtualBox -style Fusion %U|g' /usr/share/applications/virtualbox.desktop
-mkdir $HOME/.local/
-mkdir $HOME/.local/share/
-mkdir $HOME/.local/share/applications/
-sudo cp /usr/share/applications/virtualbox.desktop $HOME/.local/share/applications/
+#sudo sed -i 's|Exec=VirtualBox %U|Exec=VirtualBox -style Fusion %U|g' /usr/share/applications/virtualbox.desktop
+#mkdir $HOME/.local/
+#mkdir $HOME/.local/share/
+#mkdir $HOME/.local/share/applications/
+#sudo cp /usr/share/applications/virtualbox.desktop $HOME/.local/share/applications/
 
-echo "Setting theme for AwesomeWM ..."
-git clone https://github.com/fsimchen/material-awesome.git $HOME/.config/awesome
+#echo "Setting theme for AwesomeWM ..."
+#git clone https://github.com/fsimchen/material-awesome.git $HOME/.config/awesome
 
 # Same theme for Qt/KDE applications and GTK applications, and fix missing indicators
 echo -e "XDG_CURRENT_DESKTOP=Unity\nQT_QPA_PLATFORMTHEME=gtk2" | sudo tee -a /etc/environment
 
 # Theming
-git clone --depth 1 https://github.com/afraidofmusic/materia-theme-dracula.git
-cd materia-theme-dracula
-sudo ./install.sh
-cp ./configs/.gtkrc-2.0 $HOME/.gtkrc-2.0
-mkdir $HOME/.config/gtk-3.0
-cp ./configs/.gtk-3.0_settings.ini $HOME/.config/gtk-3.0/settings.ini
-gsettings set org.gnome.desktop.interface gtk-theme Materia-dark
+#git clone --depth 1 https://github.com/afraidofmusic/materia-theme-dracula.git
+#cd materia-theme-dracula
+#sudo ./install.sh
+#cp ./configs/.gtkrc-2.0 $HOME/.gtkrc-2.0
+#mkdir $HOME/.config/gtk-3.0
+#cp ./configs/.gtk-3.0_settings.ini $HOME/.config/gtk-3.0/settings.ini
+#gsettings set org.gnome.desktop.interface gtk-theme Materia-dark
 
-echo "Remove no password sudo rights . . ."
-sudo sed -i 's/^%wheel ALL=(ALL) NOPASSWD: ALL/# %wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+#echo "Remove no password sudo rights . . ."
+#sudo sed -i 's/^%wheel ALL=(ALL) NOPASSWD: ALL/# %wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
 
 echo -e "\nInstallation Complete!"

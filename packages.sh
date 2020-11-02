@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
 PKGS=(
-    'base'
-    'base-devel'
-    'linux'
-    'linux-firmware'
     'git'
     'nano'
     'sudo'
@@ -32,19 +28,7 @@ PKGS=(
     'mesa'                  # Open source version of OpenGL
 
     # --- Setup Desktop
-    'awesome'               # Awesome Desktop
-    'xfce4-power-manager'   # Power Manager 
-    'rofi'                  # Menu System
-    'picom'                 # Translucent Windows
-    'xclip'                 # System Clipboard
-    'polkit-gnome'          # Elevate Applications
-    'gnome-keyring'         # Elevate Applications
     'lxappearance'          # Set System Themes
-
-    # --- Login Display Manager
-    'lightdm'                   # Base Login Manager
-    'lightdm-gtk-greeter'
-    'lightdm-gtk-greeter-settings'
 
     # --- Networking Setup
     'wpa_supplicant'            # Key negotiation for WPA wireless networks
@@ -154,7 +138,6 @@ PKGS=(
     'yarn'                  # Dependency management (Hyper needs this)
 
     # MEDIA ---------------------------------------------------------------
-    'celluloid'             # Video player
     'vlc'                   # Video player
 
     # GRAPHICS AND DESIGN -------------------------------------------------
@@ -168,21 +151,15 @@ PKGS=(
     'xpdf'                  # PDF viewer
 
     # UTILITIES -----------------------------------------------------------
-    'i3lock-fancy-git'              # Screen locker
     'corectrl'
     'pamac-aur-git'
     'visual-studio-code-bin'
     'virtualbox-ext-oracle'
-    'pnmixer'                   # System tray volume control
-    'xfce4-mixer'
-    'nitrogen'
     'etcher-bin'
-    'bluez-firmware'        # Firmwares for Broadcom BCM203x and STLC2300 Bluetooth chips
     'hunspell-pt-br'           # English spellcheck library
 
     # MEDIA ---------------------------------------------------------------
     'screenkey'                 # Screencast your keypresses
-    'lbry-app-bin'              # LBRY Linux Application
 
     # COMMUNICATIONS ------------------------------------------------------
     'firefox'
