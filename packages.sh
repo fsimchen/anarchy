@@ -48,6 +48,7 @@ PKGS=(
     'bluez-utils'           # Bluetooth development and debugging utilities
     'blueberry'             # Bluetooth configuration tool
     'pulseaudio-bluetooth'  # Bluetooth support for PulseAudio
+    'bluez-firmware'
 
     # --- Printers
     'cups'                  # Open source printer drivers
