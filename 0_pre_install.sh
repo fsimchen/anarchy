@@ -42,6 +42,10 @@ Include = /etc/pacman.d/chaotic-mirrorlist
 [andontie-aur]
 SigLevel = Never
 Server = https://aur.andontie.net/$arch
+
+dotpac — Basic interactive script with ncurses-based text interface and helpful walkthrough. No merging or auto-merging features.
+https://github.com/AladW/dotpac || dotpacAUR
+
 ')
 
 sudo pacman -Syyu --noconfirm
